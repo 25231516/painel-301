@@ -18,6 +18,11 @@ jobs:
     steps:
       - name: Baixar o código do pull request
         uses: actions/checkout@v4
+        with:
+          # Histórico completo. Com o clone raso padrão, o git não encontra o
+          # ancestral comum entre a branch e a main, e a comparação abaixo
+          # falha com "no merge base".
+          fetch-depth: 0
 
       - name: Conferir se o JavaScript não tem erro de sintaxe
         run: |
@@ -36,7 +41,7 @@ jobs:
       - name: Conferir se os arquivos da base não foram alterados
         if: github.event_name == 'pull_request'
         run: |
-          git fetch origin ${{ github.base_ref }} --depth=1
+          git fetch origin ${{ github.base_ref }}
           alterados=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
           echo "Arquivos alterados neste pull request:"
           echo "$alterados"
