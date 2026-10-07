@@ -1,5 +1,14 @@
-/* EQUIPE 09 */
+/* =====================================================================
+   EQUIPE 09 — estilos do seu card
+   ---------------------------------------------------------------------
+   Comece as suas regras sempre com  #card-equipe-09
+   Assim o estilo vale só dentro do seu card e não vaza para os outros.
+
+   Antes de escrever CSS do zero, veja as classes prontas em
+   css/base.css:  .btn  .campo  .visor  .lista
+   ===================================================================== */
+
+/* Exemplo: deixa o visor da equipe 09 com outra cor. */
 #card-equipe-09 .visor {
-  color: #FBBF24;
-  font-size: 3rem;
+  color: var(--sucesso);
 }
