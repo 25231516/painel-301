@@ -27,6 +27,14 @@ real de equipes de desenvolvimento**:
 
 ---
 
+## O ciclo da atividade
+
+📊 **[Veja o diagrama do ciclo](https://euclidespaim.github.io/painel-301/ciclo.html)** — da issue
+aberta até o seu card no ar.
+
+> ⚠️ As **issues ficam só no repositório do professor**. O seu fork não as copia e nem tem a
+> aba *Issues*. Para escolher a sua feature, volte ao repositório original.
+
 ## Por onde começar
 
 1. Leia o **[CONTRIBUTING.md](CONTRIBUTING.md)** — é o roteiro passo a passo, com os comandos prontos.

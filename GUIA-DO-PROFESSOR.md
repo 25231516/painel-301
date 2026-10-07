@@ -56,14 +56,19 @@ Dois atalhos do VS Code que valem mostrar na aula 1, porque poupam terminal:
 O `CONTRIBUTING.md` traz os comandos de terminal **e** o caminho pelo VS Code, lado a lado.
 Deixe o aluno usar o que preferir — o conceito é o mesmo.
 
-## 2. Plano das 3 aulas (45 min cada)
+## 2. Material de apoio para projetar
+
+- **[Diagrama do ciclo](https://euclidespaim.github.io/painel-301/ciclo.html)** — abra em tela
+  cheia na aula 1 e volte a ele no começo das aulas 2 e 3, apontando em que etapa a turma está.
+
+## 3. Plano das 3 aulas (45 min cada)
 
 ### Aula 1 — Do fork ao primeiro pull request
 
 | Tempo | O quê |
 |---|---|
 | 0–8 | Abrir o site no ar e mostrar o painel vazio. Explicar: *"no fim, cada card aqui é de uma equipe de vocês"*. Formar duplas/trios. |
-| 8–13 | Cada equipe escolhe a feature e comenta `eu quero` na issue. Você atribui ali mesmo. |
+| 8–13 | Cada equipe escolhe a feature e comenta `eu quero` na issue. Você atribui ali mesmo. **Diga em voz alta que as issues só existem no seu repositório** — o instinto deles será procurar no próprio fork, onde a aba nem aparece. |
 | 13–25 | **Fork → clone → branch.** Momento mais crítico. Circule pela sala. |
 | 25–38 | Abrir `features/equipe-NN/feature.js`, rodar o site, trocar nome da equipe e título. Fazer o **primeiro commit e push**. |
 | 38–45 | **Abrir o Pull Request como rascunho (draft).** Fechar a aula com todos os PRs visíveis na sua tela, projetados. |
@@ -95,7 +100,7 @@ Deixe o aluno usar o que preferir — o conceito é o mesmo.
 
 ---
 
-## 3. Rotina de revisão dos pull requests
+## 4. Rotina de revisão dos pull requests
 
 Abra **Files changed** e confira nesta ordem:
 
@@ -123,7 +128,7 @@ Comente **na linha**, não só no geral — é o que ensina o recurso.
 
 ---
 
-## 4. Problemas que vão aparecer
+## 5. Problemas que vão aparecer
 
 | Sintoma | Causa | Solução |
 |---|---|---|
@@ -137,7 +142,7 @@ Comente **na linha**, não só no geral — é o que ensina o recurso.
 
 ---
 
-## 5. Avaliação sugerida
+## 6. Avaliação sugerida
 
 A nota vem do **processo**, não do tamanho do código.
 
@@ -154,7 +159,7 @@ A nota vem do **processo**, não do tamanho do código.
 
 ---
 
-## 6. Script para criar as 9 issues de uma vez
+## 7. Script para criar as issues (já executado)
 
 Com o [GitHub CLI](https://cli.github.com/) autenticado, rode na pasta do repositório:
 
@@ -177,7 +182,7 @@ criar "Busca de Pokémon"           "Busca na PokeAPI e mostra imagem e tipo. �
 
 ---
 
-## 7. Comandos úteis durante as aulas
+## 8. Comandos úteis durante as aulas
 
 ```bash
 gh pr list                      # todos os PRs abertos

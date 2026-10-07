@@ -27,6 +27,10 @@ Você não tem permissão de escrever no repositório do professor — e é assi
 Ao terminar, a barra de endereço mostra `github.com/SEU-USUARIO/painel-301`.
 Repare na frase *"forked from euclidespaim/painel-301"* embaixo do título: é ela que prova que o fork deu certo.
 
+> ⚠️ **O fork copia só o código.** Issues, pull requests e labels **não** vão junto — o seu
+> fork nem tem a aba *Issues*. Sempre que precisar ver ou comentar numa issue, volte ao
+> repositório do professor.
+
 ---
 
 ## Etapa 2 — Clonar para o computador do laboratório

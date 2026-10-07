@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciclo da Atividade — Painel 301</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔁</text></svg>">
+<style>
+  :root{--fundo:#0F172A;--card:#1E293B;--borda:#334155;--texto:#E2E8F0;
+        --fraco:#94A3B8;--azul:#38BDF8;--verde:#34D399;--ambar:#FBBF24;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--fundo);color:var(--texto);
+       min-height:100vh;display:flex;flex-direction:column;align-items:center;
+       justify-content:center;padding:1.5rem;gap:1.25rem}
+  h1{font-size:1.6rem;text-align:center}
+  h1 span{color:var(--azul)}
+  .sub{color:var(--fraco);text-align:center;font-size:.95rem;max-width:760px}
+  svg{width:100%;max-width:1180px;height:auto}
+  .legenda{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;font-size:.85rem;color:var(--fraco)}
+  .legenda i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:.4rem;vertical-align:-2px}
+  a.voltar{color:var(--azul);font-size:.85rem;text-decoration:none}
+  a.voltar:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<h1>🔁 O ciclo de uma <span>feature</span></h1>
+<p class="sub">Da issue aberta até o card no ar. A faixa de cima é o que a equipe faz; a de baixo, o que o professor faz.</p>
+
+<svg viewBox="0 0 1180 600" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Fluxo: issue, reivindicação, atribuição, fork e branch, commits, pull request, verificação automática, revisão, merge e issue fechada">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748B"/>
+    </marker>
+    <marker id="seta-ambar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FBBF24"/>
+    </marker>
+    <marker id="seta-verde" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34D399"/>
+    </marker>
+  </defs>
+
+  <!-- faixas -->
+  <rect x="0" y="70"  width="1180" height="170" rx="12" fill="#1E293B" opacity=".45"/>
+  <rect x="0" y="330" width="1180" height="170" rx="12" fill="#1E293B" opacity=".45"/>
+  <text x="16" y="96"  fill="#38BDF8" font-size="15" font-weight="700">EQUIPE</text>
+  <text x="16" y="356" fill="#34D399" font-size="15" font-weight="700">PROFESSOR</text>
+
+  <!-- ====== PROFESSOR: 1 cria issue ====== -->
+  <g>
+    <rect x="40" y="378" width="190" height="86" rx="10" fill="#1E293B" stroke="#34D399" stroke-width="2"/>
+    <text x="135" y="406" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">1 · ISSUE ABERTA</text>
+    <text x="135" y="428" text-anchor="middle" fill="#E2E8F0" font-size="13">Uma por feature</text>
+    <text x="135" y="448" text-anchor="middle" fill="#94A3B8" font-size="12">já criadas: #1 a #10</text>
+  </g>
+
+  <!-- ====== EQUIPE: 2 reivindica ====== -->
+  <g>
+    <rect x="270" y="118" width="190" height="86" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+    <text x="365" y="146" text-anchor="middle" fill="#38BDF8" font-size="13" font-weight="700">2 · REIVINDICA</text>
+    <text x="365" y="168" text-anchor="middle" fill="#E2E8F0" font-size="13">comenta “eu quero”</text>
+    <text x="365" y="188" text-anchor="middle" fill="#94A3B8" font-size="12">no repo do professor</text>
+  </g>
+
+  <!-- ====== PROFESSOR: 3 atribui ====== -->
+  <g>
+    <rect x="500" y="378" width="190" height="86" rx="10" fill="#1E293B" stroke="#34D399" stroke-width="2"/>
+    <text x="595" y="406" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">3 · ATRIBUI</text>
+    <text x="595" y="428" text-anchor="middle" fill="#E2E8F0" font-size="13">campo Assignees</text>
+    <text x="595" y="448" text-anchor="middle" fill="#94A3B8" font-size="12">a feature fica reservada</text>
+  </g>
+
+  <!-- ====== EQUIPE: 4 fork/branch/commits ====== -->
+  <g>
+    <rect x="500" y="118" width="190" height="86" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+    <text x="595" y="146" text-anchor="middle" fill="#38BDF8" font-size="13" font-weight="700">4 · DESENVOLVE</text>
+    <text x="595" y="168" text-anchor="middle" fill="#E2E8F0" font-size="13">fork → branch</text>
+    <text x="595" y="188" text-anchor="middle" fill="#94A3B8" font-size="12">commits → push</text>
+  </g>
+
+  <!-- ====== EQUIPE: 5 abre PR ====== -->
+  <g>
+    <rect x="730" y="118" width="190" height="86" rx="10" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+    <text x="825" y="146" text-anchor="middle" fill="#38BDF8" font-size="13" font-weight="700">5 · PULL REQUEST</text>
+    <text x="825" y="168" text-anchor="middle" fill="#E2E8F0" font-size="13">escreve Resolve #N</text>
+    <text x="825" y="188" text-anchor="middle" fill="#94A3B8" font-size="12">liga o PR à issue</text>
+  </g>
+
+  <!-- ====== CI (meio) ====== -->
+  <g>
+    <rect x="730" y="258" width="190" height="64" rx="10" fill="#1E293B" stroke="#64748B" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="825" y="284" text-anchor="middle" fill="#94A3B8" font-size="12" font-weight="700">6 · VERIFICAÇÃO (CI)</text>
+    <text x="825" y="304" text-anchor="middle" fill="#94A3B8" font-size="12">roda sozinha no GitHub</text>
+  </g>
+
+  <!-- ====== PROFESSOR: 7 revisa ====== -->
+  <g>
+    <rect x="730" y="378" width="190" height="86" rx="10" fill="#1E293B" stroke="#34D399" stroke-width="2"/>
+    <text x="825" y="406" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">7 · REVISA</text>
+    <text x="825" y="428" text-anchor="middle" fill="#E2E8F0" font-size="13">comenta nas linhas</text>
+    <text x="825" y="448" text-anchor="middle" fill="#94A3B8" font-size="12">aprova ou pede ajuste</text>
+  </g>
+
+  <!-- ====== PROFESSOR: 8 merge ====== -->
+  <g>
+    <rect x="960" y="378" width="180" height="86" rx="10" fill="#1E293B" stroke="#34D399" stroke-width="2"/>
+    <text x="1050" y="406" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">8 · MERGE</text>
+    <text x="1050" y="428" text-anchor="middle" fill="#E2E8F0" font-size="13">entra na main</text>
+    <text x="1050" y="448" text-anchor="middle" fill="#94A3B8" font-size="12">squash</text>
+  </g>
+
+  <!-- ====== RESULTADO ====== -->
+  <g>
+    <rect x="960" y="118" width="180" height="86" rx="10" fill="#064E3B" stroke="#34D399" stroke-width="2"/>
+    <text x="1050" y="146" text-anchor="middle" fill="#34D399" font-size="13" font-weight="700">9 · NO AR 🎉</text>
+    <text x="1050" y="168" text-anchor="middle" fill="#E2E8F0" font-size="13">issue fecha sozinha</text>
+    <text x="1050" y="188" text-anchor="middle" fill="#94A3B8" font-size="12">card aparece no site</text>
+  </g>
+
+  <!-- ====== setas ====== -->
+  <!-- 1 -> 2 -->
+  <path d="M230,400 C255,400 255,180 268,165" stroke="#64748B" stroke-width="2" fill="none" marker-end="url(#seta)"/>
+  <!-- 2 -> 3 -->
+  <path d="M462,180 C480,180 480,400 498,415" stroke="#64748B" stroke-width="2" fill="none" marker-end="url(#seta)"/>
+  <!-- 3 -> 4 -->
+  <path d="M595,376 L595,206" stroke="#64748B" stroke-width="2" fill="none" marker-end="url(#seta)"/>
+  <!-- 4 -> 5 -->
+  <path d="M692,161 L728,161" stroke="#64748B" stroke-width="2" fill="none" marker-end="url(#seta)"/>
+  <!-- 5 -> 6 (CI) -->
+  <path d="M825,206 L825,256" stroke="#64748B" stroke-width="2" fill="none" marker-end="url(#seta)"/>
+  <!-- 6 -> 7 -->
+  <path d="M825,324 L825,376" stroke="#64748B" stroke-width="2" fill="none" marker-end="url(#seta)"/>
+  <!-- 7 -> 8 (aprovado) -->
+  <path d="M922,421 L958,421" stroke="#34D399" stroke-width="2.5" fill="none" marker-end="url(#seta-verde)"/>
+  <text x="940" y="411" text-anchor="middle" fill="#34D399" font-size="11" font-weight="700">aprovado</text>
+  <!-- 8 -> 9 -->
+  <path d="M1050,376 L1050,206" stroke="#34D399" stroke-width="2.5" fill="none" marker-end="url(#seta-verde)"/>
+
+  <!-- LOOP: 7 -> 4 (pediu ajuste) -->
+  <path d="M760,376 C745,330 640,300 620,230 L613,210"
+        stroke="#FBBF24" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#seta-ambar)"/>
+  <text x="648" y="330" text-anchor="end" fill="#FBBF24" font-size="13" font-weight="700">pediu ajuste</text>
+  <text x="648" y="348" text-anchor="end" fill="#FBBF24" font-size="11">o MESMO PR se atualiza</text>
+
+  <!-- rodape do svg -->
+  <text x="590" y="548" text-anchor="middle" fill="#64748B" font-size="12">
+    As issues existem apenas no repositório do professor — o fork não as copia.
+  </text>
+  <text x="590" y="572" text-anchor="middle" fill="#64748B" font-size="12">
+    Para reivindicar uma feature, a equipe volta ao repositório original.
+  </text>
+</svg>
+
+<div class="legenda">
+  <span><i style="background:#38BDF8"></i>Ação da equipe</span>
+  <span><i style="background:#34D399"></i>Ação do professor</span>
+  <span><i style="background:#64748B"></i>Automático (GitHub)</span>
+  <span><i style="background:#FBBF24"></i>Volta para correção</span>
+</div>
+
+<a class="voltar" href="index.html">← Voltar ao painel</a>
+
+</body>
+</html>
