@@ -5,6 +5,14 @@ Cada passo tem o comando pronto para copiar.
 
 > Legenda: `SEU-USUARIO` = seu nome de usuário no GitHub. `NN` = o número da sua equipe (01, 02, ...).
 
+> 💻 **Você vai usar o VS Code já logado na sua conta do GitHub.** Isso significa que o
+> push funciona sem senha e sem token. Antes de começar, confira o **ícone de conta no canto
+> inferior esquerdo** do VS Code: ele precisa mostrar *o seu* usuário, não o do colega que
+> usou a máquina antes.
+>
+> Cada etapa abaixo mostra **o comando no terminal** e **o caminho pelo VS Code**. Use o que
+> você preferir — o resultado é o mesmo.
+
 ---
 
 ## Etapa 1 — Fazer o fork
@@ -28,6 +36,9 @@ git clone https://github.com/SEU-USUARIO/painel-301.git
 cd painel-301
 ```
 
+**Pelo VS Code:** `Ctrl+Shift+P` → digite *Git: Clone* → cole a URL do **seu fork** →
+escolha a pasta → *Open*.
+
 Confira se você clonou **o seu fork**, e não o original:
 
 ```bash
@@ -47,6 +58,9 @@ git checkout -b equipe-NN/nome-da-feature
 ```
 
 Exemplo real: `git checkout -b equipe-03/sorteador-de-nomes`
+
+**Pelo VS Code:** clique no **nome da branch** (canto inferior esquerdo, provavelmente diz
+`main`) → *Create new branch* → digite o nome.
 
 Para confirmar em qual branch você está:
 
@@ -92,6 +106,9 @@ Mensagem de commit boa descreve o que passou a existir:
 | `teste` | `fix: corrige o visor que não zerava` |
 | `aula de hoje` | `style: deixa o card com borda verde` |
 
+**Pelo VS Code:** aba **Source Control** (`Ctrl+Shift+G`) → passe o mouse sobre a sua pasta
+e clique no **+** para selecioná-la → escreva a mensagem na caixa de cima → clique no **✓**.
+
 ---
 
 ## Etapa 6 — Enviar para o GitHub (push)
@@ -100,7 +117,8 @@ Mensagem de commit boa descreve o que passou a existir:
 git push -u origin equipe-NN/nome-da-feature
 ```
 
-Na primeira vez o Git pede login. Depois disso, só `git push`.
+**Pelo VS Code:** clique em **Publish Branch** (ou *Sync Changes*, se a branch já existir
+no GitHub). Como o VS Code está logado na sua conta, não vai pedir senha.
 
 ---
 

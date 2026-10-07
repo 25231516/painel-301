@@ -27,20 +27,32 @@ transparência total — não há gabarito aqui, só logística).
 > esquecida, trava os 45 minutos inteiros. Peça na aula anterior que todos confirmem o
 > acesso — e tenha um plano B (dupla trabalha na conta de um só).
 
-### Sobre autenticação
+### Sobre autenticação — resolvido pelo VS Code
 
-Desde 2021 o GitHub não aceita mais senha no `git push`. As opções:
+A turma usa o **VS Code autenticado na conta do GitHub**, e isso elimina o maior risco
+da atividade. O VS Code cuida do token sozinho: o aluno não precisa gerar Personal Access
+Token nem digitar senha no `git push`.
 
-| Opção | Como | Recomendação |
-|---|---|---|
-| **Personal Access Token** | Settings → Developer settings → Tokens (classic) → escopo `repo` | ✅ Mais simples no laboratório |
-| GitHub CLI | `gh auth login` | Bom se o `gh` já estiver instalado |
-| SSH | Gerar chave por aluno | Demorado demais para 45 min |
+O que confirmar no laboratório, por máquina:
 
-Oriente a turma a gerar o token **na aula anterior** e guardá-lo. No `git push`,
-o token é colado no lugar da senha.
+- [ ] VS Code aberto, com o aluno logado (ícone de conta no canto inferior esquerdo → deve mostrar o usuário do GitHub)
+- [ ] Se a máquina for compartilhada, o aluno anterior precisa ter saído da conta
 
----
+> ⚠️ **O ponto de atenção agora é outro:** máquina de laboratório costuma guardar a sessão
+> do aluno anterior. Se o aluno A fizer push com a conta do aluno B ainda logada, o commit
+> sai no nome errado. Peça para todos conferirem o ícone de conta antes de começar.
+
+Dois atalhos do VS Code que valem mostrar na aula 1, porque poupam terminal:
+
+| Ação | Onde |
+|---|---|
+| Clonar | `Ctrl+Shift+P` → *Git: Clone* → cola a URL |
+| Criar branch | clique no nome da branch, canto inferior esquerdo |
+| Commit | aba *Source Control* (`Ctrl+Shift+G`) → escreve a mensagem → ✓ |
+| Push | botão *Sync Changes*, ou `Ctrl+Shift+P` → *Git: Push* |
+
+O `CONTRIBUTING.md` traz os comandos de terminal **e** o caminho pelo VS Code, lado a lado.
+Deixe o aluno usar o que preferir — o conceito é o mesmo.
 
 ## 2. Plano das 3 aulas (45 min cada)
 
@@ -117,6 +129,7 @@ Comente **na linha**, não só no geral — é o que ensina o recurso.
 | PR aponta para o repo errado | Base errada no formulário | Fechar e abrir de novo, conferindo a seta |
 | "This branch has conflicts" | Raro aqui (arquivos separados), mas pode ocorrer na `main` do fork | Equipe sincroniza o fork (Etapa 10 do CONTRIBUTING) |
 | Push recusado após sincronizar | Histórico divergiu | `git pull --rebase` e depois `git push` |
+| Commit saiu no nome errado | VS Code logado na conta do colega | Sair da conta no ícone inferior esquerdo e entrar de novo |
 | Aluno mexeu na `main` | Esqueceu a branch | `git stash` → `git checkout -b equipe-NN/x` → `git stash pop` |
 | Card não aparece no site | Erro de JavaScript | F12 → Console. O motor isola o erro: só aquele card quebra. |
 | Dois cards se atrapalham | `id` repetido entre equipes | Renomear com o sufixo da equipe |
