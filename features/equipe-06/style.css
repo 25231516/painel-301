@@ -1,0 +1,14 @@
+/* =====================================================================
+   EQUIPE 06 — estilos do seu card
+   ---------------------------------------------------------------------
+   Comece as suas regras sempre com  #card-equipe-06
+   Assim o estilo vale só dentro do seu card e não vaza para os outros.
+
+   Antes de escrever CSS do zero, veja as classes prontas em
+   css/base.css:  .btn  .campo  .visor  .lista
+   ===================================================================== */
+
+/* Exemplo: deixa o visor da equipe 06 com outra cor. */
+#card-equipe-06 .visor {
+  color: var(--sucesso);
+}

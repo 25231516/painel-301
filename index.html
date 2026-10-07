@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel 301 — Turma de Programação de Aplicativos</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/base.css">
+
+  <!-- ===================================================================
+       CSS DAS EQUIPES
+       Cada equipe tem o seu arquivo. Você NÃO precisa mexer aqui.
+       =================================================================== -->
+  <link rel="stylesheet" href="features/equipe-01/style.css">
+  <link rel="stylesheet" href="features/equipe-02/style.css">
+  <link rel="stylesheet" href="features/equipe-03/style.css">
+  <link rel="stylesheet" href="features/equipe-04/style.css">
+  <link rel="stylesheet" href="features/equipe-05/style.css">
+  <link rel="stylesheet" href="features/equipe-06/style.css">
+  <link rel="stylesheet" href="features/equipe-07/style.css">
+  <link rel="stylesheet" href="features/equipe-08/style.css">
+  <link rel="stylesheet" href="features/equipe-09/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <h1><i class="fa-solid fa-puzzle-piece"></i> Painel <span>301</span></h1>
+    <p>Um painel construído por toda a turma — cada card é a feature de uma equipe.</p>
+  </header>
+
+  <main>
+    <div id="grade-de-cards" class="grade">
+      <!-- Os cards entram aqui sozinhos, via JavaScript. -->
+    </div>
+
+    <p id="aviso-vazio" class="aviso">
+      Nenhuma feature publicada ainda. Assim que a primeira equipe tiver o seu
+      pull request aprovado, o card dela aparece aqui.
+    </p>
+  </main>
+
+  <footer class="rodape">
+    <p>Projeto colaborativo da Turma 301 &middot; Prof. Euclides Paim</p>
+  </footer>
+
+  <!-- O motor do painel precisa vir ANTES das equipes. -->
+  <script src="js/app.js"></script>
+
+  <!-- ===================================================================
+       JAVASCRIPT DAS EQUIPES
+       Cada equipe tem o seu arquivo. Você NÃO precisa mexer aqui.
+       =================================================================== -->
+  <script src="features/equipe-01/feature.js"></script>
+  <script src="features/equipe-02/feature.js"></script>
+  <script src="features/equipe-03/feature.js"></script>
+  <script src="features/equipe-04/feature.js"></script>
+  <script src="features/equipe-05/feature.js"></script>
+  <script src="features/equipe-06/feature.js"></script>
+  <script src="features/equipe-07/feature.js"></script>
+  <script src="features/equipe-08/feature.js"></script>
+  <script src="features/equipe-09/feature.js"></script>
+
+  <script>iniciarPainel();</script>
+</body>
+</html>

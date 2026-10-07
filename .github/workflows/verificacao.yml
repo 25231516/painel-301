@@ -1,0 +1,51 @@
+# =====================================================================
+# Integração contínua do Painel 301
+#
+# Este arquivo faz o GitHub conferir sozinho cada pull request.
+# É o mesmo conceito de CI/CD que vimos na aula 7.
+# =====================================================================
+name: Verificação
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  conferir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código do pull request
+        uses: actions/checkout@v4
+
+      - name: Conferir se o JavaScript não tem erro de sintaxe
+        run: |
+          erros=0
+          for arquivo in js/app.js features/equipe-*/feature.js; do
+            if node --check "$arquivo" 2>/dev/null; then
+              echo "ok      $arquivo"
+            else
+              echo "ERRO    $arquivo"
+              node --check "$arquivo" || true
+              erros=1
+            fi
+          done
+          exit $erros
+
+      - name: Conferir se os arquivos da base não foram alterados
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          alterados=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          echo "Arquivos alterados neste pull request:"
+          echo "$alterados"
+          proibidos=$(echo "$alterados" | grep -E '^(index\.html|js/app\.js|css/base\.css)$' || true)
+          if [ -n "$proibidos" ]; then
+            echo ""
+            echo "Este pull request altera arquivos da base do projeto:"
+            echo "$proibidos"
+            echo "Cada equipe deve mexer apenas na sua pasta features/equipe-NN/."
+            exit 1
+          fi
+          echo "Nenhum arquivo da base foi alterado."

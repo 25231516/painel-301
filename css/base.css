@@ -1,0 +1,159 @@
+/* =====================================================================
+   ESTILO DA BASE DO PAINEL
+   Arquivo da base do projeto. Cada equipe estiliza o seu card no
+   arquivo features/equipe-NN/style.css
+   ===================================================================== */
+
+:root {
+  --fundo: #0F172A;
+  --fundo-card: #1E293B;
+  --borda: #334155;
+  --texto: #E2E8F0;
+  --texto-fraco: #94A3B8;
+  --destaque: #38BDF8;
+  --sucesso: #34D399;
+  --erro: #F87171;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Topo e rodapé ---------- */
+.topo {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.topo h1 { font-size: 2.2rem; }
+.topo h1 span { color: var(--destaque); }
+.topo p { color: var(--texto-fraco); margin-top: 0.4rem; }
+
+main { flex-grow: 1; width: 100%; max-width: 1100px; margin: 2.5rem auto; padding: 0 1.25rem; }
+
+.rodape {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--texto-fraco);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--borda);
+}
+
+.aviso {
+  display: none;
+  text-align: center;
+  color: var(--texto-fraco);
+  border: 1px dashed var(--borda);
+  border-radius: 12px;
+  padding: 3rem 1.5rem;
+}
+
+/* ---------- Grade de cards ---------- */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--fundo-card);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.card-topo h2 { font-size: 1.05rem; }
+.card-topo h2 i { color: var(--destaque); margin-right: 0.35rem; }
+
+.etiqueta {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  background-color: var(--borda);
+  color: var(--texto-fraco);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.card-area { padding: 1.25rem; flex-grow: 1; }
+
+.card-rodape {
+  padding: 0.7rem 1.25rem;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+  border-top: 1px solid var(--borda);
+}
+
+.erro { color: var(--erro); font-size: 0.9rem; }
+
+/* ---------- Peças prontas para as equipes usarem ---------- */
+/* Use estas classes no seu HTML para já sair com visual combinando. */
+
+.btn {
+  background-color: var(--destaque);
+  color: #0F172A;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover { filter: brightness(1.1); }
+
+.campo {
+  width: 100%;
+  background-color: #0F172A;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.campo:focus { outline: none; border-color: var(--destaque); }
+
+.visor {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.8rem;
+  color: var(--destaque);
+}
+
+.lista { list-style: none; margin-top: 0.8rem; }
+.lista li {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.lista li:last-child { border-bottom: none; }
+
+@media (max-width: 600px) {
+  .grade { grid-template-columns: 1fr; }
+  .topo h1 { font-size: 1.6rem; }
+}
