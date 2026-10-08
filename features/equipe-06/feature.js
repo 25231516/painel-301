@@ -39,7 +39,10 @@ registrarCard({
         "No céu tem pão?",
         "Euclides farmador de aura.",
         "Euclides disse que ia dar nota extra pra todo mundo.",
-        "Pra quê jogar a bola na Mavie?...Arrogante"
+        "Pra quê jogar a bola na Mavie?...Arrogante",
+        "O Euclides é o melhor pai do mundo",
+        "Euclides pai da 301",
+        "O Matheus usa hack na aula do Euclides",
       ];
       const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
       visor.textContent = fraseAleatoria;
