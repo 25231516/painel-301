@@ -11,4 +11,6 @@
 /* Exemplo: deixa o visor da equipe 06 com outra cor. */
 #card-equipe-06 .visor {
   color: var(--sucesso);
+  
 }
+

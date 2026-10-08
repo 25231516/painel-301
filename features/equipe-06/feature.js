@@ -16,32 +16,36 @@ registrarCard({
 
   // ---- 1. Identificação (troque pelos dados da sua equipe) ----
   equipe: "06",
-  titulo: "Contador de Cliques",
-  integrantes: ["Nome do aluno 1", "Nome do aluno 2"],
-  icone: "fa-solid fa-star",   // procure outro em fontawesome.com/icons
-
+  titulo: "mural de frase",
+  integrantes: ["João Marcos", "Maria Gabrieli"],
+    icone: "fa-solid fa-star",   // procure outro em fontawesome.com/icons
   // ---- 2. O que aparece dentro do card ----
-  montar(area) {
+  montar(area) { 
 
     // 2.1 — O HTML do seu card.
     area.innerHTML = `
-      <p>Clique no botão e veja o número subir.</p>
-      <p class="visor" id="visor-06">0</p>
-      <button class="btn" id="botao-06">Clicar</button>
-    `;
-
+      <p>Clique no botão e uma nova frase será adicionada ao mural.</p>
+      <p class="visor" id="visor-06">...</p>      <button class="btn" id="botao-06">Nova Frase</button>
+      `;
     // 2.2 — Pegando os elementos que acabamos de criar.
-    const visor = document.getElementById("visor-06");
+    const visor = document.getElementById("visor-06");    
     const botao = document.getElementById("botao-06");
-
-    // 2.3 — Uma variável para guardar o estado.
-    let contador = 0;
-
-    // 2.4 — O que acontece quando o usuário clica.
-    botao.addEventListener("click", function () {
-      contador = contador + 1;
-      visor.innerText = contador;
-    });
+  
+    // 2.3 — O que acontece quando o usuário clica.
+    //a cada clique uma frase diferente é adicionada ao visor.
+    botao.onclick = () => {
+      const frases = [
+        "O sábio se cala, pois esqueceu o que ia dizer.",
+        "No céu tem pão?",
+        "Euclides farmador de aura.",
+        "Euclides disse que ia dar nota extra pra todo mundo.",
+        "Pra quê jogar a bola na Mavie?...Arrogante"
+      ];
+      const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+      visor.textContent = fraseAleatoria;
+    };
 
   }
+
 });
+
